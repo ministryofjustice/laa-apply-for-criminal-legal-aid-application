@@ -196,9 +196,7 @@ en:
       disbursements:
         edit:
           page_title: Disbursements
-          heading:
-            one: You've added %{count} disbursement
-            other: You've added %{count} disbursements
+          heading: Disbursements
           headers:
             line_item: Item
             item: Cost type
@@ -212,13 +210,17 @@ en:
           change: Change
           delete: Delete
           add_another_button: Add another disbursement
+          incomplete_summary:
+            one: '%{count} disbursement is incomplete'
+            other: '%{count} disbursements are incomplete'
+          item: item %{index}
           accessibility:
             disbursements_caption: Claimed disbursements
             item_id: itemTitle
             delete: delete
             duplicate: duplicate
             disbursement_type: disbursementType
-          summary: Summary of Disbursements
+          summary: Disbursement totals
           table_info_item: disbursement
         update:
           disbursement: disbursement

@@ -20,8 +20,14 @@
     </defendant>
     <defendant>
       <first_name>Jane</first_name>
-      <last_name>Doe</last_name>
+      <last_name></last_name>
       <maat>7654321</maat>
+      <main>false</main>
+    </defendant>
+    <defendant>
+      <first_name>John</first_name>
+      <last_name>Smith</last_name>
+      <position>1</position>
       <main>false</main>
     </defendant>
   </defendants>

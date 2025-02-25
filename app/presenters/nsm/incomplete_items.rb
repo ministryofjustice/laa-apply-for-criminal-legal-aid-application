@@ -12,7 +12,7 @@ module Nsm
 
     attr_reader :controller
 
-    EXPECTED_ITEM_TYPES = [:work_items, :disbursements].freeze
+    EXPECTED_ITEM_TYPES = [:work_items, :disbursements, :defendants].freeze
 
     def initialize(claim, type, controller)
       @claim = claim
@@ -43,11 +43,16 @@ module Nsm
     private
 
     def path_url(item)
-      edit_polymorphic_path([:nsm, :steps, path_route], { "#{@type.to_s.singularize}_id": item.id, id: @claim.id })
+      if @type == :defendants
+        nsm_steps_defendant_details_path(id: @claim.id, defendant_id: item.id)
+      else
+        edit_polymorphic_path([:nsm, :steps, path_route], { "#{@type.to_s.singularize}_id": item.id, id: @claim.id })
+      end
     end
 
     def path_route
       case @type
+      when :defendants then :defendant_summary
       when :disbursements then :disbursement_type
       else @type.to_s.singularize.to_sym
       end

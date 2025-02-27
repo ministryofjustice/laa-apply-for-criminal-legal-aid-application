@@ -95,6 +95,7 @@ en:
             other: You've added %{count} defendants
       defendant_summary:
         edit:
+          header: Defendants
           page_title: Defendant summary
           heading:
             one: You've added 1 defendant

@@ -52,7 +52,6 @@ module Nsm
 
     def path_route
       case @type
-      when :defendants then :defendant_summary
       when :disbursements then :disbursement_type
       else @type.to_s.singularize.to_sym
       end

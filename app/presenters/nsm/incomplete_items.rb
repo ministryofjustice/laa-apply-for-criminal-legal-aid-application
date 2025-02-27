@@ -43,16 +43,13 @@ module Nsm
     private
 
     def path_url(item)
-      if @type == :defendants
-        nsm_steps_defendant_details_path(id: @claim.id, defendant_id: item.id)
-      else
-        edit_polymorphic_path([:nsm, :steps, path_route], { "#{@type.to_s.singularize}_id": item.id, id: @claim.id })
-      end
+      edit_polymorphic_path([:nsm, :steps, path_route], { "#{@type.to_s.singularize}_id": item.id, id: @claim.id })
     end
 
     def path_route
       case @type
       when :disbursements then :disbursement_type
+      when :defendants then :defendant_details
       else @type.to_s.singularize.to_sym
       end
     end
